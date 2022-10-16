@@ -10,9 +10,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: aquasave/aquasave@v1
-
-      - name: Install dependencies
-        run: dart pub get
-
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: beta
+      - run: flutter pub get
+      - run: flutter test
+      - uses: bluefireteam/flutter-gh-pages@v7
+        with:
+          baseHref: /registration-desk/
+          
 
