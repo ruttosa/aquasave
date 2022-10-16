@@ -143,13 +143,6 @@ class _TaskDetailCircularState extends State<TaskDetailCircular> {
                     debugPrint('Countdown Changed $timeStamp');
                   }),
             ),
-            Padding(
-              padding: const EdgeInsets.all(15),
-              child: Text(
-                "DETENER ALARMA",
-                style: const TextStyle(color: Colors.white),
-              ),
-            ),
           ],
         ));
   }

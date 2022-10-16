@@ -1,30 +1,11 @@
 import 'dart:isolate';
-import 'dart:math';
-
-import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
 import 'package:aquasave/aquasave/screens/aquasave.dart';
 import 'package:aquasave/home/screens/Home.dart';
 import 'package:flutter/material.dart';
 
 main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await AndroidAlarmManager.initialize();
   runApp(const MyApp());
   final int helloAlarmID = 0;
-  await AndroidAlarmManager.oneShot(
-    const Duration(seconds: 10),
-    Random().nextInt(1),
-    (printHello),
-    exact: true,
-    wakeup: true,
-  );
-}
-
-@pragma('vm:entry-point')
-void printHello() {
-  final DateTime now = DateTime.now();
-  final int isolateId = Isolate.current.hashCode;
-  print("[$now] Hello, world! isolate=${isolateId} function='$printHello'");
 }
 
 class MyApp extends StatelessWidget {
